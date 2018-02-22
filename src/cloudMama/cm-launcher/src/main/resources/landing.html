@@ -1,0 +1,58 @@
+<!doctype html>
+<html ng-app="landingApp">
+<head lang="en">
+    <meta charset="utf-8">
+    <title>CloudMama Launcher</title>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular-resource.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular-route.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular-sanitize.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.11.0/ui-bootstrap-tpls.min.js"></script>
+    <script src="//cdn.jsdelivr.net/angular.ngtable/0.3.3/ng-table.js"></script>
+    <script src="js/angular-wizard.js"></script>
+    <script src="__config.js"></script>
+    <script src="js/cmInterface.js"></script>
+    <script src="js/ux.js"></script>
+    <script src="js/jobMonitor.js"></script>
+    <script src="js/jobLauncher.js"></script>
+    <script src="js/launcherInterface.js"></script>
+    <script src="js/landing.js"></script>
+    <script src="js/landingControllers.js"></script>
+
+    <link rel="icon" href="favicon.png">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/angular.ngtable/0.3.3/ng-table.css">
+    <link rel="stylesheet" href="css/angular-wizard.css">
+    <link rel="stylesheet" href="css/shared.css">
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+            <img src="img/logo.png" class="brand-logo"> CloudMama Launcher
+        </a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar" ng-controller="navBarCtrl">
+        <ul class="nav navbar-nav">
+            <li ng-class="{ active: isActive('/settings') }"><a href="#/settings">Settings</a></li>
+            <li ng-class="{ active: isActive('/manage') }"><a href="#/manage">Manage</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div ng-view></div>
+
+<div class="navbar navbar-default navbar-fixed-bottom" style="background-color: #05f5f5;">
+    <div style="text-align: center; margin: 10px;">
+        <p class="text-muted credit">
+            CloudMama v.0.1 &#xa9; <a href="#">RedRock</a> 2014-15
+        </p>
+    </div>
+</div>
+
+</body>
+</html>

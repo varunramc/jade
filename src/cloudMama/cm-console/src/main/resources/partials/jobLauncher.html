@@ -1,0 +1,65 @@
+<div class="job-launcher">
+    <wizard>
+        <wz-step title="Select Job">
+            Select job:<br/>
+
+            <table class="table table-fixedheader table-striped table-hover"
+                   style="width: 80%; margin-left: 10%; margin-right: 10%">
+                <thead>
+                <tr>
+                    <th width="65%">Package</th>
+                    <th width="35%">Class</th>
+                </tr>
+                </thead>
+                <tbody style="height: 100px">
+                <tr ng-repeat="metadata in jobMetadata" ng-click="selectJob($index)" style="cursor: pointer">
+                    <td width="65%">
+                        {{metadata.packageName}}
+                    </td>
+                    <td width="35%">
+                        {{metadata.className}}
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </wz-step>
+        <wz-step title="Setup Job">
+            <p>
+                <b>Job class:</b> {{jobInput.classCanonicalName}}<br/>
+                <b>Parameters:</b>
+
+                <span ng-if="!selectedJobHasParameters">N/A</span>
+            <table class="table table-striped wizard-content" ng-if="selectedJobHasParameters">
+                <thead>
+                <tr>
+                    <th width="30%">Name</th>
+                    <th width="70%">Value</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="(key, metaData) in selectedJob.parameterMetaDataMap">
+                    <td width="30%" class="keyValueTable-key">
+                        <label>{{key}}</label>
+                    </td>
+                    <td width="70%" class="keyValueTable-value">
+                        <input type="number" class="form-control" ng-model="jobInput.parameters[key]"
+                               ng-if="metaData.type == 'INTEGER'" placeholder="Enter an integer value"
+                               ng-pattern="/^\d+$/" ng-required="metaData.required"/>
+                        <input type="text" class="form-control" ng-model="jobInput.parameters[key]"
+                               ng-if="metaData.type == 'STRING'" placeholder="Enter a string value"
+                               ng-required="metaData.required"/>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            </p>
+            <br/>
+            <button type="button" class="btn btn-default panel-nav btn-sm" ng-click="launchJob()">
+                <span class="glyphicon glyphicon-circle-arrow-right"></span> Next
+            </button>
+        </wz-step>
+        <wz-step title="Monitor Job">
+            <job-monitor job-id="newJob.id" ng-if="newJob.id"/>
+        </wz-step>
+    </wizard>
+</div>

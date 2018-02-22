@@ -1,0 +1,44 @@
+<div class="container" ng-controller="settingsCtrl">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                Settings:
+            </h3>
+        </div>
+        <div class="panel-body">
+            <table class="table table-condensed table-striped">
+                <thead>
+                <tr>
+                    <th class="col-sm-1">Setting</th>
+                    <th class="col-sm-3">Value</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Machine:</td>
+                    <td>{{ settings.machineName }}</td>
+                </tr>
+                <tr>
+                    <td>Jade root:</td>
+                    <td>{{ settings.devRoot }}</td>
+                </tr>
+                <tr>
+                    <td>MongoDB:</td>
+                    <td>
+                        <span ng-class="settings.mongoVersion != '' ? 'glyphicon glyphicon-ok-circle good' : 'glyphicon glyphicon-remove-circle bad'"></span>
+                        {{settings.mongoVersion}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Vagrant:</td>
+                    <td>
+                        <span ng-class="settings.vagrantVersion != '' ? 'glyphicon glyphicon-ok-circle good' : 'glyphicon glyphicon-remove-circle bad'"></span>
+                        {{settings.vagrantVersion}}
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+
+rootProject.name='jade'
+
+include 'shared:dao'
+include 'cloudMama:cm-shared'
+include 'cloudMama:cm-masterd'
+include 'cloudMama:cm-console'
+include 'cloudMama:cm-launcher'
+include 'gameplix:fileServer'
+include 'gameplix:restService'
+

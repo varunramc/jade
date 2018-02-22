@@ -1,0 +1,26 @@
+<div class="container" ng-controller="deploymentsCtrl">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <table style="width: 100%">
+                <td width="20%">
+                    <h3 class="panel-title">
+                        Deployments:
+                    </h3>
+                </td>
+
+                <td width="80%" style="text-align: right">
+                    <a class="btn btn-default btn-sm" ng-click="openNewDeploymentWindow()">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </a>
+                </td>
+            </table>
+        </div>
+        <div class="panel-body">
+            <accordion>
+                <accordion-group heading="{{entry.name}}" ng-repeat="entry in deployments">
+                    [{{entry.id}}] This is a '{{entry.type}}'deployment '{{entry.name}}'
+                </accordion-group>
+            </accordion>
+        </div>
+    </div>
+</div>

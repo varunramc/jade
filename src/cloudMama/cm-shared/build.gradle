@@ -1,0 +1,46 @@
+apply plugin: 'java'
+apply plugin: 'jacoco'
+
+sourceCompatibility = 1.8
+group = 'com.jade'
+version = '0.1'
+
+repositories {
+    mavenCentral()
+}
+
+jacoco {
+    toolVersion = "0.7.1.201405082137"
+    reportsDir = file("$buildDir/jacocoReports")
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled false
+        csv.enabled false
+        html.destination "${buildDir}/jacocoHtml"
+    }
+}
+
+
+dependencies {
+    compile project(':shared:dao')
+    compile group: 'cglib', name: 'cglib', version: '3.1'
+    compile group: 'org.jodd', name: 'jodd-proxetta', version: '3.6.1'
+    compile group: 'com.google.guava', name: 'guava', version: '17.0'
+    compile group: 'com.typesafe.akka', name: 'akka-actor_2.10', version: '2.3.4'
+    compile group: 'com.typesafe.akka', name: 'akka-remote_2.10', version: '2.3.4'
+    compile group: 'org.mongodb', name: 'mongo-java-driver', version: '2.12.2'
+    compile group: 'org.jongo', name: 'jongo', version: '1.0'
+    compile group: 'com.github.fakemongo', name: 'fongo', version: '1.5.4'
+    compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.6'
+
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    compile group: 'com.typesafe.akka', name: 'akka-testkit_2.10', version: '2.3.4'
+}
+
+// Reason for adding below block - http://stackoverflow.com/questions/14814837/gradle-test-fails-with-error
+tasks.withType(Test) {
+    scanForTestClasses = true
+    include "**/*Test.class" // whatever Ant pattern matches your test class files
+}

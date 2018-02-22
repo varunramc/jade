@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.path="$MODULE_DIR$" external.root.project.path="$MODULE_DIR$/../.." external.system.id="GRADLE" external.system.module.group="jade.shared" external.system.module.version="0.1" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="false">
+    <output url="file://$MODULE_DIR$/build/classes/main" />
+    <output-test url="file://$MODULE_DIR$/build/classes/test" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/resources" type="java-test-resource" />
+      <excludeFolder url="file://$MODULE_DIR$/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/build" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" exported="" name="Gradle: guava-17.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: mongo-java-driver-2.12.2" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: jongo-1.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: fongo-1.5.4" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: jackson-core-2.2.3" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: jackson-databind-2.2.3" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: jackson-annotations-2.2.3" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: bson4jackson-2.2.3" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: geo-0.6.6" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: js-1.7R2" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: jts-1.13" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: junit-4.11" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: hamcrest-core-1.3" level="project" />
+  </component>
+</module>
+

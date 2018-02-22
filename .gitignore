@@ -1,0 +1,16 @@
+# Jade GIT ignore
+
+# Extensions
+*.directory
+*.vim
+*.swp
+.DS_Store
+
+# Paths
+/target/
+/libs/
+/vagrant/
+publish/
+
+# Specific files
+.gradle

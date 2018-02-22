@@ -1,0 +1,53 @@
+<tabset>
+    <tab heading="Status">
+        <div style="margin-top: 20px;">
+            <ul>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Job</th>
+                        <th style="text-align: center">Type</th>
+                        <th>Status</th>
+                        <th>Progress</th>
+                        <th>Error</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="job in flattenedJobTree" ng-class="getExecutionStatusClass(job.status)" style="vertical-align: middle">
+                        <td>{{job.id}}</td>
+                        <td>{{job.type}}</td>
+                        <td>{{job.status}}</td>
+                        <td>
+                            <progressbar class="progress-striped active" max="100" animate="true"
+                                         value="job.progressPercentage * 100">
+                                <b>{{job.progressPercentage * 100}}%</b>
+                            </progressbar>
+                        </td>
+                        <td>{{job.error}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </ul>
+        </div>
+    </tab>
+    <tab heading="Logs">
+        <table class="table table-striped" style="margin-top: 20px;">
+            <thead>
+            <tr>
+                <th>Time</th>
+                <th>Job</th>
+                <th>Level</th>
+                <th>Message</th>
+            </tr>
+            </thead>
+            <tbody class="job-logs">
+            <tr ng-repeat="(logId, log) in jobLogs" ng-class="getLogClass(log)">
+                <td>{{log.time}}</td>
+                <td>{{log.jobId}}</td>
+                <td>{{log.level}}</td>
+                <td><pre>{{log.message}}</pre></td>
+            </tr>
+            </tbody>
+        </table>
+    </tab>
+</tabset>

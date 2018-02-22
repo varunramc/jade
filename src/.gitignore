@@ -1,0 +1,9 @@
+target/
+out/
+build/
+.gradle/
+gradle/
+*.idea/libraries
+*.idea/workspace.xml
+*.idea/tasks.xml
+*.DS_Store
